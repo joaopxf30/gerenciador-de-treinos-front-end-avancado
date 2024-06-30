@@ -1,24 +1,35 @@
 import { useMemo, useState } from "react"
+import {v4 as uuidv4} from 'uuid';
 import Item from "../components/Item"
 import banner from "../assets/banner.png"
 import atletasData from "../atletas.json"
 import SearchBar from "../components/SearchBar"
 import SubmitBar from "../components/SubmitBar"
-import { extractName } from "../utils/functions"
 import PersonIcon from "@mui/icons-material/Person";
 
-export default function atletasPage() {
-  const [atletasList, setAtletasList] = useState(extractName(atletasData.atletas))
-  const [queryName, setQueryName] = useState("")
-  
-  const filteredAthletesName = useMemo(() => {
-    return atletasList.filter(item => {
-    return item.toLowerCase().includes(queryName.toLowerCase())
-  })}, [atletasList, queryName])
+export default function HomePage() {
+  const [atletasList, setAtletasList] = useState(atletasData.atletas)
+  const [queryNome, setQueryNome] = useState("")
 
-  const addAthleteName = (newAthlete) => {
+  const filteredAtletasNome = useMemo(() => {
+    return atletasList.filter(atelta => {
+    return atelta.nome.toLowerCase().includes(queryNome.toLowerCase())
+  })}, [atletasList, queryNome])
+
+  const geraNovoAtleta = (nomeAtleta) => {
+    return ({
+      "id": uuidv4(),
+      "nome": nomeAtleta,
+      "idade": null,
+      "altura": null,
+      "pesos": null,
+      "treinos": []
+    })
+  }
+
+  const addAtleta = (newAtleta) => {
     setAtletasList(currentList =>
-      [...currentList, newAthlete]
+      [...currentList, geraNovoAtleta(newAtleta)]
   )}
 
   return (
@@ -29,31 +40,33 @@ export default function atletasPage() {
       </section>
 
       <section className="container-add-search">
-        <div id="home-search-bar">
+        <div className="container-search-bar">
           <SearchBar 
             textPlaceholder={"esportista"} 
-            action={setQueryName} 
-            query={queryName}
+            action={setQueryNome} 
+            query={queryNome}
           />
         </div>
-        <div id="home-submit-bar">
+        <div className="container-submit-bar">
           <SubmitBar 
             textPlaceholder={"esportista"} 
-            action={addAthleteName}
+            action={addAtleta}
           />
         </div>
       </section>
 
       <section className="main-athletes">
-        {filteredAthletesName.map((name, index) => (
+        {filteredAtletasNome.map((info, index) => (
           <Item 
-            key={index} 
-            labelText={name} 
+            info={info}
+            label={info.nome}
             IconComponent={PersonIcon}
+            routeURL={`/esportista/${info.nome}`}
+            key={index}
           />
         ))}
       </section>
-      <footer></footer>
+
     </div>
   )
 }

@@ -10,7 +10,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home/>}></Route>
           <Route path="/esportista/:id" element={<Esportista/>}></Route>
-          {/* <Route path="/treino" elemetn={<Treino/>}></Route> */}
+          <Route path="/esportista/:id/treino/:id" element={<Treino/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

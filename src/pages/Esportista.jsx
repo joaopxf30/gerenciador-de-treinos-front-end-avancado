@@ -1,62 +1,73 @@
 import { useMemo, useState } from "react"
+import { useLocation } from 'react-router-dom';
+import {v4 as uuidv4} from 'uuid';
 import Item from "../components/Item"
 import banner from "../assets/banner.png"
-import atletasData from "../atletas.json"
 import SearchBar from "../components/SearchBar"
 import SubmitBar from "../components/SubmitBar"
-import { extractTreinos } from "../utils/functions"
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 
 export default function EsportistaPage() {
-  const [infoEsportista, setInfoEsportista] = useState("")
-  const [treinosList, setTreinosList] = useState([])
-  const [queryName, setQueryName] = useState("")
+  const { state: esportista } = useLocation()
+  const [treinosList, setTreinosList] = useState(esportista.treinos)
+  const [queryTreino, setQueryTreino] = useState("")
   
   const filteredTreino = useMemo(() => {
-    return treinosList.filter(item => {
-    return item.toLowerCase().includes(queryName.toLowerCase())
-  })}, [treinosList, queryName])
+    return treinosList.filter(treino => {
+    return treino.descricao.toLowerCase().includes(queryTreino.toLowerCase())
+  })}, [treinosList, queryTreino])
 
+  const geraNovoTreino = (descricaoTreino) => {
+    return ({
+      "id": uuidv4(),
+      "descricao": descricaoTreino,
+      "data": null,
+      "esporte": null,
+      "duracao": null,
+      "calorias": null,
+      "bpm": null
+    })
+  }
 
   const addTreino = (newTreino) => {
     setTreinosList(currentList =>
-      [...currentList, newTreino]
+      [...currentList, geraNovoTreino(newTreino)]
   )}
     
   return (
     <div className="treinos-registrados">
 
       <section className="banner">
-        <img src={banner} alt="Banner" />
+        <img src={banner} alt="Banner"/>
       </section>
 
       <section className="container-add-search">
-        <div id="treino-submit-bar">
+        <div className="container-search-bar">
+          <SearchBar 
+            textPlaceholder={"treino"} 
+            action={setQueryTreino} 
+            query={queryTreino}
+          />
+        </div>
+        <div className="container-submit-bar">
           <SubmitBar
             textPlaceholder={"treino"}
             action={addTreino}
           />
         </div>
-        <div id="treino-search-bar">
-            <SearchBar 
-              textPlaceholder={"treino"} 
-              action={setQueryName} 
-              query={queryName}
-            />
-        </div>
       </section>
 
       <section className="main-treinos">
-        {filteredTreino.map((name, index) => (
+        {filteredTreino.map((info, index) => (
           <Item 
-            key={index} 
-            labelText={name} 
+            info={info}
+            label={info.descricao} 
             IconComponent={FitnessCenterIcon}
+            routeURL={`/esportista/${esportista.nome}/treino/${info.id}`}
+            key={index} 
           />
         ))}
       </section>
-
-      <footer></footer>
 
     </div>
   )

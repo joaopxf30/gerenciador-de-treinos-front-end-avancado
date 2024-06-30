@@ -3,9 +3,8 @@
 body {
   padding: 0px;
   margin: 0px;
-  background-color: #EAEAEA;
+  background-color: #000000;
   font-family: 'Roboto';
-
 }
 
 .content-product {
@@ -38,7 +37,6 @@ header {
 
 }
 
-
 .main-products {
   width: 100%;
   position: relative;
@@ -50,54 +48,15 @@ header {
   flex: 1;
 }
 
-@media (min-width: 200px) and (max-width: 501px) {
-  .main-products {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .banner img {
-    width: 250px;
-  }
-
-}
-
-@media (min-width:500px) and (max-width: 740px) {
-  .main-products {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .banner img {
-    width: 350px;
-  }
-
-}
-
-@media (min-width:741px) and (max-width: 1000px) {
-  .main-products {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .banner img {
-    width: 500px;
-  }
-
-}
-
-footer {
-  border-top: 5px solid rgb(65, 65, 65);
-  background-color: #000000;
-  position:absolute;
-  bottom:0;
-}
-
 /* Relativos à pagina main */
 
 .main-athletes {
   background-color: #000000;
-  padding: 7px;
+  flex: 1;
+  border-bottom: 5px solid rgb(65, 65, 65);
 }
 
-#home-search-bar{
+.container-search-bar{
   padding-bottom: 7px;
 }
 
@@ -110,6 +69,7 @@ footer {
   background-color: rgb(100, 0, 0);
   padding-top: 10px;
   padding-bottom: 10px;
+  margin-bottom: 7px;
 }
 
 .search-bar {
@@ -177,7 +137,6 @@ footer {
     color: #707070;
 }
 
-
 .minus,
 .plus {
     width: 20px;
@@ -241,15 +200,6 @@ input:focus {
     color: white;
     font-weight: 700;
     justify-self: center;
-}
-
-@media (min-width:200px) and (max-width: 282px) {   
-    .quantity-title{
-        font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
-        display: block;
-    }
 }
 
 .item-name {

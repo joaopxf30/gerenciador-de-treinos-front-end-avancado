@@ -6,8 +6,8 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import Button from "./Button";
 
 
-export default function Item({ labelText, IconComponent, routeURL }) {
-    
+export default function Item({ info, label, IconComponent, routeURL }) {
+
   return (
     <div className="item-name">
       <ListItem>
@@ -16,12 +16,13 @@ export default function Item({ labelText, IconComponent, routeURL }) {
             <IconComponent/>
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary={labelText} />
+        <ListItemText primary={label} />
         <Button
           IconComponent={NavigateNextIcon} 
           type="button"
           color="white"
-          routeURL={`/esportista/${labelText}`}
+          routeURL={routeURL}
+          info={info}
         /> 
       </ListItem>
     </div>
