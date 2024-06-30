@@ -1,0 +1,64 @@
+{
+    "atletas": [
+        {
+            "id": "182d9368-f0c4-487f-b663-10e7c040c4cb",
+            "name": "João Pedro Xavier Freitas",
+            "age": 27,
+            "height": 1.67,
+            "weight": 70,
+            "treinos": [
+                {
+                    "id": "",
+                    "descricao": "Natação 24/06/2024",
+                    "data": "",
+                    "esporte": "Natação",
+                    "duracao": "",
+                    "calorias": 320,
+                    "bpm": 180
+                },
+                {
+                    "id": "",
+                    "descricao": "Natação 26/06/2024",
+                    "data": "",
+                    "esporte": "Natação",
+                    "duracao": "",
+                    "calorias": 320,
+                    "bpm": 180
+                },
+                {
+                    "id": "",
+                    "descricao": "Corrida 28/06/2024",
+                    "data": "",
+                    "esporte": "Corrida",
+                    "duracao": "",
+                    "calorias": 320,
+                    "bpm": 180
+                }
+            ]
+        },
+        {
+            "id": "def03623-d763-4335-b9c7-d7aae56c84bd",
+            "name": "Helen Maia Vicentini",
+            "age": 30,
+            "height": 1.70,
+            "weight": 60,
+            "treinos": []
+        },
+        {
+            "id": "8b9907d0-9d37-47cd-a9d9-2388c6ae934e",
+            "name": "Alexandre Neves",
+            "age": 34,
+            "height": 1.79,
+            "weight": 83,
+            "treinos": []
+        },
+        {
+            "id": "0c2ff813-8ced-4767-bdee-ea05bdde0e13",
+            "name": "Mariana Salgueiro",
+            "age": 27,
+            "height": 1.52,
+            "weight": 52,
+            "treinos": []
+        }                   
+    ]
+}
