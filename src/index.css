@@ -62,6 +62,19 @@ header {
 
 /* Parte relativa a cada item */
 
+.information {
+  font-size: 14px;
+  border: 2px solid #3e0000;
+  border-radius: 10px;
+  margin-bottom: 7px;
+  color: #EAEAEA;
+}
+
+.information-container {
+  display: flex;
+  align-items: center;
+}
+
 .container-add-search {
   display: flex;
   flex-direction: column;
@@ -73,7 +86,7 @@ header {
 }
 
 .search-bar {
-  width: max-content;
+  width: 300px;
   display: flex;
   align-items: center;
   padding: 7px;
@@ -82,12 +95,11 @@ header {
 }
 
 .search-input {
-  width: max-content;
   font-size: 14px;
 }
 
 .submit-bar {
-  width: max-content;
+  width: 305px;
   display: flex;
   align-items: center;
   padding: 3px;
@@ -96,7 +108,7 @@ header {
 }
 
 .submit-input {
-  width: max-content;
+  width: 258px ;
   font-size: 14px;
 }
 

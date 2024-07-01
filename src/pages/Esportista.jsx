@@ -6,6 +6,8 @@ import banner from "../assets/banner.png"
 import SearchBar from "../components/SearchBar"
 import SubmitBar from "../components/SubmitBar"
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+import Information from "../components/Information";
+import Button from "../components/Button";
 
 export default function EsportistaPage() {
   const { state: esportista } = useLocation()
@@ -39,6 +41,13 @@ export default function EsportistaPage() {
 
       <section className="banner">
         <img src={banner} alt="Banner"/>
+      </section>
+
+      <section className="information-container">
+        <Information valorInicial={esportista.nome}></Information>
+        <Information valorInicial={esportista.idade}></Information>
+        <Information valorInicial={esportista.altura}></Information>
+        <Information valorInicial={esportista.peso}></Information>
       </section>
 
       <section className="container-add-search">
