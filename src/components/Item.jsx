@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import ListItem from "@mui/material/ListItem";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemText from "@mui/material/ListItemText";
@@ -7,6 +8,13 @@ import Button from "./Button";
 
 
 export default function Item({ info, label, IconComponent, routeURL }) {
+  const navigate = useNavigate()
+
+  const onClick = () => {
+      if (routeURL) {
+          navigate(routeURL, {state: info})
+      }
+  }
 
   return (
     <div className="item-name">
@@ -21,8 +29,7 @@ export default function Item({ info, label, IconComponent, routeURL }) {
           IconComponent={NavigateNextIcon} 
           type="button"
           color="white"
-          routeURL={routeURL}
-          info={info}
+          onClick={onClick}
         /> 
       </ListItem>
     </div>

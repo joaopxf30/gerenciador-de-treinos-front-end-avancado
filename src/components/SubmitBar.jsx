@@ -20,5 +20,6 @@ export default function SubmitBar({ textPlaceholder, action }) {
           <Button IconComponent={PersonAddIcon} type="submit" color="black" id="submit-button"/>
       </form>
     </section>
-    )
+  )
+  
 }

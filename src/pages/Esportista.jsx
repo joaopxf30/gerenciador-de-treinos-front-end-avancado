@@ -5,9 +5,9 @@ import Item from "../components/Item"
 import banner from "../assets/banner.png"
 import SearchBar from "../components/SearchBar"
 import SubmitBar from "../components/SubmitBar"
+import TextField from "../components/TextField";
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
-import Information from "../components/Information";
-import Button from "../components/Button";
+
 
 export default function EsportistaPage() {
   const { state: esportista } = useLocation()
@@ -43,11 +43,35 @@ export default function EsportistaPage() {
         <img src={banner} alt="Banner"/>
       </section>
 
-      <section className="information-container">
-        <Information valorInicial={esportista.nome}></Information>
-        <Information valorInicial={esportista.idade}></Information>
-        <Information valorInicial={esportista.altura}></Information>
-        <Information valorInicial={esportista.peso}></Information>
+      <section className="information--container">
+        <div className="information--main">
+          <TextField 
+            className="information--main--field" 
+            id="textfield--input-nome"
+            label="Nome" 
+            value={esportista.nome}
+          />
+        </div>
+        <div className="information--aux">
+          <TextField
+            className="information--aux--field" 
+            id="textfield--input-idade" 
+            label="Idade"
+            value={esportista.idade}  
+          />
+          <TextField
+            className="information--aux--field"  
+            id="textfield--input-altura"
+            label="Altura" 
+            value={esportista.altura}
+          />
+          <TextField
+            className="information--aux--field"  
+            id="textfield--input-peso" 
+            label="Peso"
+            value={esportista.peso}
+          />
+        </div>
       </section>
 
       <section className="container-add-search">

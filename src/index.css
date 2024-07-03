@@ -37,17 +37,6 @@ header {
 
 }
 
-.main-products {
-  width: 100%;
-  position: relative;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
-  box-sizing: border-box;
-  flex: 1;
-}
-
 /* Relativos à pagina main */
 
 .main-athletes {
@@ -70,9 +59,9 @@ header {
   color: #EAEAEA;
 }
 
-.information-container {
-  display: flex;
-  align-items: center;
+.information--container {
+  background-color: rgba(100, 0, 0, 0.485);
+  border: 2px solid #3e0000;
 }
 
 .container-add-search {
@@ -82,6 +71,7 @@ header {
   background-color: rgb(100, 0, 0);
   padding-top: 10px;
   padding-bottom: 10px;
+  margin-top: 7px;
   margin-bottom: 7px;
 }
 
@@ -112,54 +102,6 @@ header {
   font-size: 14px;
 }
 
-
-.product {
-    width: 240px;
-    box-sizing: border-box;
-    height: 400px;
-    margin: 20px;
-    padding: 20px 20px;
-    background-color: white;
-    border-radius: 18px;
-    display: grid;
-    grid-template-rows: repeat(5, 1fr);
-}
-
-.product img {
-    width: 120px;
-    height: 120px;
-    padding: 15px;
-    justify-self: center;
-}
-
-.price-product {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    margin: 0px;
-    padding: 30px 0px 5px;
-}
-
-.name-product {
-    margin: 0px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 32px;
-    color: #707070;
-}
-
-.minus,
-.plus {
-    width: 20px;
-    margin: 2px;
-    height: 20px;
-    background: #FFFFFF;
-    border: 1px solid #D9D9D9;
-    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
-    border-radius: 100px;
-}
-
 .input-wrapper {
   background-color: white;
   width: 100%;
@@ -183,37 +125,6 @@ input:focus {
   outline: none;
 }
 
-.quantity span {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    color: #727272;
-    margin: 0px 5px;
-}
-
-.quantity span:nth-of-type(even) {
-    font-style: normal;
-    font-size: 10px;
-    padding: 4px;
-    border: 1px solid #D9D9D9;
-    display: inline-block;
-    text-align: center;
-    width: 24px;
-}
-
-.buy {
-    background-color: black;
-    border: 1px solid black;
-    box-sizing: border-box;
-    width: 87px;
-    height: 32px;
-    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
-    border-radius: 2px;
-    color: white;
-    font-weight: 700;
-    justify-self: center;
-}
-
 .item-name {
   background-color: rgba(100, 0, 0, 0.485);
   border: 2px solid #3e0000;
@@ -221,3 +132,60 @@ input:focus {
   margin-bottom: 7px;
   color: #EAEAEA;
 }
+
+.information--main{
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+}
+
+.information--aux {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 7px;
+}
+
+.textfield {
+  display: flex;
+  flex-direction: column;
+}
+
+.textfield--input {
+  padding: 4px;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+#textfield--input-nome {
+  width: 290px;
+}
+
+#textfield--input-idade {
+  width: 90px;
+}
+
+#textfield--input-altura {
+  width: 90px;
+}
+
+#textfield--input-peso {
+  width: 90px;
+}
+
+.label--input {
+  color: white;
+  font-size: 14px;
+  margin-left: 8px;
+  margin-bottom: 1px;
+}
+
+.textfield--header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
