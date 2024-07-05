@@ -39,6 +39,10 @@ export default function HomePage() {
         <img src={banner} alt="Banner"/>
       </section>
 
+      <section className="reference">
+        <div className="reference--page">HOME</div>
+      </section>
+
       <section className="container-add-search">
         <div className="container-search-bar">
           <SearchBar 
