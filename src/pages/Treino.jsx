@@ -5,13 +5,11 @@ import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import Button from "../components/Button";
 
 export default function TreinoPage() {
-  const { state: treino } = useLocation()
+  const { state: { complementInfo: esportista, info: treino } } = useLocation()
   const navigate = useNavigate()
 
-  console.log(treino)
-
   const routeBack = (routeURL) => {
-    navigate(routeURL)
+    navigate(routeURL, { state: { info: esportista } })
   }
 
   return (    

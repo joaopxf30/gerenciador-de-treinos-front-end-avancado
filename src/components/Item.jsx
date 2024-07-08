@@ -7,13 +7,19 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import Button from "./Button";
 
 
-export default function Item({ info, label, IconComponent, routeURL }) {
+export default function Item({ info, complementInfo, label, IconComponent, routeURL }) {
   const navigate = useNavigate()
 
   const onClick = () => {
-      if (routeURL) {
-          navigate(routeURL, {state: info})
-      }
+    if (routeURL) {
+        navigate(routeURL, { 
+          state: {
+            info: info,
+            complementInfo: complementInfo
+          }
+        }
+      )
+    }
   }
 
   return (

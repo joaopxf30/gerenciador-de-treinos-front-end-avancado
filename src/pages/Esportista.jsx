@@ -12,10 +12,11 @@ import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 
 
 export default function EsportistaPage() {
-  const { state: esportista } = useLocation()
+  const { state: { info: esportista } } = useLocation()
+  const navigate = useNavigate()
+
   const [treinosList, setTreinosList] = useState(esportista.treinos)
   const [queryTreino, setQueryTreino] = useState("")
-  const navigate = useNavigate()
   
   const filteredTreino = useMemo(() => {
     return treinosList.filter(treino => {
@@ -114,6 +115,7 @@ export default function EsportistaPage() {
         {filteredTreino.map((info, index) => (
           <Item 
             info={info}
+            complementInfo = {esportista}
             label={info.descricao} 
             IconComponent={FitnessCenterIcon}
             routeURL={`/esportista/${esportista.nome}/treino/${info.id}`}
