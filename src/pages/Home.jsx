@@ -32,6 +32,11 @@ export default function HomePage() {
       [...currentList, geraNovoAtleta(newAtleta)]
   )}
 
+  const deleteAtleta = (index) => {
+    setAtletasList(currentList => 
+      currentList.filter((_, i) => i !== index)
+  )}
+
   return (
     <div className="esportistas-registrados">
 
@@ -67,6 +72,7 @@ export default function HomePage() {
             IconComponent={PersonIcon}
             routeURL={`/esportista/${info.nome}`}
             key={index}
+            deleteAction={() => deleteAtleta(index)}
           />
         ))}
       </section>

@@ -43,6 +43,11 @@ export default function EsportistaPage() {
     setTreinosList(currentList =>
       [...currentList, geraNovoTreino(newTreino)]
   )}
+
+  const deleteTreino = (index) => {
+    setTreinosList(currentList => 
+      currentList.filter((_, i) => i !== index)
+  )}
     
   return (
     <div className="treinos-registrados">
@@ -59,8 +64,9 @@ export default function EsportistaPage() {
             type="button"
             color="white"
             onClick={() => {routeBack("/")}}
+            size="large"
           />
-          Voltar
+          <span>Voltar</span>
         </div>
       </section>
 
@@ -119,7 +125,8 @@ export default function EsportistaPage() {
             label={info.descricao} 
             IconComponent={FitnessCenterIcon}
             routeURL={`/esportista/${esportista.nome}/treino/${info.id}`}
-            key={index} 
+            key={index}
+            deleteAction={() => deleteTreino(index)} 
           />
         ))}
       </section>

@@ -17,7 +17,7 @@ export default function SubmitBar({ textPlaceholder, action }) {
     <section className="submit-bar">
       <form onSubmit={onSubmit} className="submit-form">
         <input ref={inputReference} placeholder={`Adiciona um ${textPlaceholder}...`} className="submit-input"/>
-          <Button IconComponent={PersonAddIcon} type="submit" color="black" id="submit-button"/>
+          <Button IconComponent={PersonAddIcon} type="submit" color="black" id="submit-button" size="inherit"/>
       </form>
     </section>
   )

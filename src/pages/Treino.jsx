@@ -27,8 +27,9 @@ export default function TreinoPage() {
             type="button"
             color="white"
             onClick={() => {routeBack(`/esportista/${treino.esportista}`)}}
+            size="large"
           />
-          Voltar
+          <span>Voltar</span>
         </div>
       </section>
 

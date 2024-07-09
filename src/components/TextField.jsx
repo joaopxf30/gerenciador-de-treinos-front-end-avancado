@@ -31,12 +31,12 @@ export default function TextField({ id, label, pre, pos, value }) {
         <label className="label--input" htmlFor={id}>{label}</label>
         { modoEdicao? (
           <div className="textfield--header-actions">
-            <Button onClick={encerraModoEdicao} IconComponent={CloseIcon} color="white"/>
-            <Button onClick={onEdicao} IconComponent={SaveIcon} color="white"/>
+            <Button onClick={encerraModoEdicao} IconComponent={CloseIcon} color="white" size="inherit"/>
+            <Button onClick={onEdicao} IconComponent={SaveIcon} color="white" size="inherit"/>
           </div>
         ) : (
           <div className="textfield--header-actions">
-            <Button onClick={abreModoEdicao} IconComponent={EditIcon} color="white"/>
+            <Button onClick={abreModoEdicao} IconComponent={EditIcon} color="white" size="inherit"/>
           </div>
         )}
       </div>
