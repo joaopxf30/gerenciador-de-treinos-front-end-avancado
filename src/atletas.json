@@ -45,7 +45,18 @@
             "idade": 30,
             "altura": 1.70,
             "peso": 60,
-            "treinos": []
+            "treinos": [
+                {
+                    "esportista": "Helen Maia Vicentini",
+                    "id": "518a0baa-7e07-424b-a5da-b4311d0b7ea1",
+                    "descricao": "Natação 08/07/2024",
+                    "data": "08/07/2024",
+                    "esporte": "Natação",
+                    "duracao": "00h:40m:40s",
+                    "calorias": 220,
+                    "bpm": 150
+                }                
+            ]
         },
         {
             "id": "8b9907d0-9d37-47cd-a9d9-2388c6ae934e",
@@ -53,7 +64,18 @@
             "idade": 34,
             "altura": 1.79,
             "peso": 83,
-            "treinos": []
+            "treinos": [
+                {
+                    "esportista": "Alexandre Neves",
+                    "id": "921706dc-10ac-4329-9000-28cbf554aa2d",
+                    "descricao": "Futebol 09/07/2024",
+                    "data": "09/07/2024",
+                    "esporte": "Futebol",
+                    "duracao": "01h:20m:00s",
+                    "calorias": 400,
+                    "bpm": 180
+                }      
+            ]
         },
         {
             "id": "0c2ff813-8ced-4767-bdee-ea05bdde0e13",
@@ -61,7 +83,18 @@
             "idade": 27,
             "altura": 1.52,
             "peso": 52,
-            "treinos": []
+            "treinos": [
+                {
+                    "esportista": "Mariana Salgueiro",
+                    "id": "4c6d7b51-e0b6-45dc-a000-bd660e3e4229",
+                    "descricao": "Dança 10/07/2024",
+                    "data": "10/07/2024",
+                    "esporte": "Dança",
+                    "duracao": "00h:52m:22s",
+                    "calorias": 210,
+                    "bpm": 164
+                }    
+            ]
         }                   
     ]
 }
