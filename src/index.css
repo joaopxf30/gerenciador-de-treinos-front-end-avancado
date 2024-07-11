@@ -7,12 +7,6 @@ body {
   font-family: 'Roboto';
 }
 
-.content-product {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 header {
   position: absolute;
   width: 100%;
@@ -34,10 +28,7 @@ header {
 
 .banner img {
   height: 158px;
-
 }
-
-/* Relativos à pagina main */
 
 .main-athletes {
   background-color: #000000;
@@ -54,8 +45,6 @@ header {
 .container-search-bar{
   padding-bottom: 7px;
 }
-
-/* Parte relativa a cada item */
 
 .information {
   font-size: 14px;
