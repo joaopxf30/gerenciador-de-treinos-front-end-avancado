@@ -5,7 +5,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import SaveIcon from '@mui/icons-material/Save';
 
 
-export default function TextField({ id, label, pre, pos, value }) {
+export default function TextField({ id, label, value }) {
   const [modoEdicao, setModoEdicao] = useState(false)
   const [valorInput, setValorInput] = useState(value)
   
