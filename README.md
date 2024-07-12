@@ -37,8 +37,26 @@ Com isso, uma aba no navegador padrão será aberta renderizando a entidade Home
 ___
 ## Principais dependências adicionais utilizadas
 Além das próprias dependências disponibilizadas no build, a aplicação constantemente recorre a:
-react-router-dom
 
+* react-router-dom (versão >= 6.24.0): realiza o roteamento dentro da SPA, permitindo ainda a troca de informação entre as entidades;
+* @mui/material (versão >= 5.12.20): disponibiliza componentes;
+* @mui/icons-material (versão >= 5.12.20): disponibiliza ícones customizáveis.
+
+___
+## Fluxo de dados no roteamento
+É importante destacar que as informações visualizadas ao executar a aplicação não estão geradas a partir de um servidor de dados. São oriundas de um mock pelo arquivo `atletas.json`. Logo, as adições e alterações feitas não são persistidas.
+
+A comunicação entre as entidades da SPA ocorre seguindo o seguinte fluxo:
+
+<p align="center"> Home ↔ Esportista ↔ Treino </>
+
+* A página Home sempre carrega todo o conteúdo de `atletas.json` e renderiza apenas o nome dos esportistas;
+* O roteamento Home → Esportista leva somente os dados filtrados do esportista específico com os treinos associados;
+* A página Esportista renderiza os dados do esportista e a descrição dos treinos associados;
+* O roteamento Esportista → Treino leva os mesmos dados do roteamento Home → Esportista;
+* A página Treino renderiza somente os dados do treino específico;
+* O roteamento Treino → Esporista retorna todos os dados do roteamento Esportista → Treino;
+* O roteamento Esportista → Home não realiza fluxo de dados do JSON.
 
 
    
